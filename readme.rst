@@ -8,10 +8,9 @@ NIM					: 18520241011
 *******************
 Screenshoot
 *******************
-
-Markup : ![picture alt](https://github.com/dstwn/uas-web/blob/master/screenshoot/1.png )
-Markup : ![picture alt](https://github.com/dstwn/uas-web/blob/master/screenshoot/2.png )
-Markup : ![picture alt](https://github.com/dstwn/uas-web/blob/master/screenshoot/3.png )
+.. image:: https://github.com/dstwn/uas-web/blob/master/screenshoot/1.png
+.. image:: https://github.com/dstwn/uas-web/blob/master/screenshoot/2.png
+.. image:: https://github.com/dstwn/uas-web/blob/master/screenshoot/2.png
 
 
 *******************
