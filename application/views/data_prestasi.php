@@ -46,7 +46,6 @@
 </head>
 
 <body class="layout-3">
-    <?php echo ($this->session->set_flashdata('notif')); ?>
     <div class="modal fade" tabindex="-1" role="dialog" id="tambah">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -144,6 +143,7 @@
                 <button class="btn btn-primary float-right" data-toggle="modal" data-target="#tambah">Tambah Prestasi</button>
               </div>
               <div class="card-body">
+              <?php echo $this->session->flashdata('notif') ?>
               <div id="chart_prestasi" style="width: 100%; height: 500px;"></div>
                   <div class="table-responsive">
                     <table id="tb_prestasi" class="table table-striped table-bordered table-hover">
@@ -154,6 +154,7 @@
                             <th>Tingkat</th>
                             <th>Tahun</th>
                             <th>Kegiatan</th>
+                            <th>Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -168,6 +169,12 @@
                             <td><?php echo $hasil->tingkat ?></td>
                             <td><?php echo $hasil->tahun ?></td>
                             <td><?php echo $hasil->kegiatan ?></td>
+                            <td>
+                              <div class="buttons">
+                                <a class="btn btn-primary" href="<?php echo base_url() ?>prestasi/edit/<?php echo $hasil->id?>">Sunting</a>
+                                <a class="btn btn-danger" href="<?php echo base_url()?>prestasi/hapus/<?php echo $hasil->id?>">Hapus</a>
+                              </div>
+                            </td>
                           </tr>
 
                         <?php } ?>

@@ -15,5 +15,33 @@ class Prestasi_model extends CI_Model{
             return false;
         }
     }
+
+    public function edit($id){
+        $query = $this->db->where("id",$id)->get("prestasi");
+        if($query){
+            return $query->row();
+        }else{
+            return false;
+        }
+    }
+
+    public function update($data,$id){
+        $query = $this->db->update("prestasi",$data,$id);
+        if($query){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    public function hapus($id) {
+        $this->db->where('id',$id);
+        $this->db->delete('prestasi');
+        // $query = $this->db->delete("prestasi",$id);
+        // if($query){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+    }
 }
 ?>

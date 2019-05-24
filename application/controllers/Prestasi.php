@@ -34,14 +34,58 @@ class Prestasi extends CI_Controller {
             'kegiatan' => $this->input->post("kegiatan")
         );
         $this->prestasi_model->simpan($data);
-        redirect('prestasi/');
+        
         $this->session->set_flashdata('notif','
         <div class="alert alert-success">
             <div class="alert-title">Berhasil</div>
             Prestasi berhasil ditambahkan.
         </div>
         ');
+        redirect('prestasi/');
         
+    }
+    public function edit($id){
+        $id = $this->uri->segment(3);
+        $data = array(
+            'title' => 'Edit Prestasi',
+            'data_prestasi' => $this->prestasi_model->edit($id)
+        );
+        $this->load->view('item_handler',$data);
+    }
+    
+    public function update(){
+        $id['id'] = $this->input->post("id");
+        $data = array (
+            'mahasiswa' => $this->input->post("mahasiswa"),
+            'predikat' => $this->input->post("predikat"),
+            'tingkat' => $this->input->post("tingkat"),
+            'tahun' => $this->input->post("tahun"),
+            'kegiatan' => $this->input->post("kegiatan")
+        );
+        $this->prestasi_model->update($data, $id);
+       
+        $this->session->set_flashdata('notif','
+        <div class="alert alert-success">
+            <div class="alert-title">Berhasil</div>
+            Prestasi berhasil diedit.
+        </div>
+        ');
+        redirect('prestasi/');
+    }
+    public function hapus($id){
+
+        $id = $this->uri->segment(3);
+        $this->prestasi_model->hapus($id);
+
+        
+        $this->session->set_flashdata('notif','
+        <div class="alert alert-danger">
+            <div class="alert-title">Dihapus</div>
+            Prestasi berhasil dihapus.
+        </div>
+        ');
+
+        redirect('prestasi/');
     }
    
 
