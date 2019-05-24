@@ -10,7 +10,7 @@ Screenshoot
 *******************
 .. image:: https://github.com/dstwn/uas-web/blob/master/screenshoot/1.png
 .. image:: https://github.com/dstwn/uas-web/blob/master/screenshoot/2.png
-.. image:: https://github.com/dstwn/uas-web/blob/master/screenshoot/2.png
+.. image:: https://github.com/dstwn/uas-web/blob/master/screenshoot/3.png
 
 
 *******************
